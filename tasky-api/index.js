@@ -2,8 +2,10 @@ import dotenv from 'dotenv';
 import express from 'express';
 import tasksRouter from './api/tasks';
 import './db';
+
 // other imports
 import cors from 'cors';
+import userRouter from './api/users';
 
 dotenv.config();
 
@@ -26,6 +28,8 @@ const port = process.env.PORT;
 app.use(express.json());
 
 app.use('/api/tasks', tasksRouter);
+
+app.use('/api/users', userRouter);
 
 app.use(errHandler);
 
