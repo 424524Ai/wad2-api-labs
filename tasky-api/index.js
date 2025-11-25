@@ -5,7 +5,7 @@ import './db';
 
 // other imports
 import cors from 'cors';
-import userRouter from './api/users';
+import usersRouter from './api/users';
 
 dotenv.config();
 
@@ -29,7 +29,7 @@ app.use(express.json());
 
 app.use('/api/tasks', tasksRouter);
 
-app.use('/api/users', userRouter);
+app.use('/api/users', usersRouter);
 
 app.use(errHandler);
 
